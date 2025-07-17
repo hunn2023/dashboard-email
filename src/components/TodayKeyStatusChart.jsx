@@ -51,7 +51,7 @@ const TodayKeyStatusChart = () => {
   if (!data || !Array.isArray(data)) return <div>Không có dữ liệu.</div>;
   const labels = data.map(item => item.email);
   const okValues = data.map(item => item.totalOk);
-  const totalValues = data.map(item => item.totalChecked);
+  const totalValues = data.map(item => item.totalDomain);
   
 
   const chartData = {
@@ -66,7 +66,7 @@ const TodayKeyStatusChart = () => {
         barPercentage: 0.8,
       },
       {
-        label: 'Tổng email check',
+        label: 'Tổng số công ty đã check',
         data: totalValues,
         backgroundColor: '#3b82f6',
         borderRadius: 8,

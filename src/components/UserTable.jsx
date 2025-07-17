@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from './Spinner' // optional loading component
 
-const users = [
-  { name: 'Nguyễn Văn A', quota: 1000, used: 800, remaining: 200, usedPercent: 80, today: 25, error: 1, status: 'Gần hết' },
-  { name: 'Trần Thị B', quota: 500, used: 450, remaining: 50, usedPercent: 90, today: 25, error: 5, status: 'Báo động' },
-  { name: 'Phạm Văn C', quota: 500, used: 450, remaining: 50, usedPercent: 80, today: 25, error: 5, status: 'Báo' },
-  { name: 'Lê Thị D', quota: 1610, used: 100, remaining: 300, usedPercent: 80, today: 30, error: 10, status: 'Báo động' }
-]
-
 const getStatusColor = (status) => {
   switch (status) {
     case 'Gần hết': return 'bg-yellow-100 text-yellow-800'
@@ -66,8 +59,9 @@ export default function UserTable() {
             <th>Đã dùng</th>
             <th>Còn lại</th>
             <th>% dùng</th>
-            <th>Email check hôm nay</th>
-            <th>Email ok hôm nay</th>
+            <th>Tổng số công ty đã check</th>
+            <th>Tổng số email đã check</th>
+            <th>Tổng số email ok</th>
             <th>Trạng thái</th>
           </tr>
         </thead>
@@ -79,6 +73,7 @@ export default function UserTable() {
               <td>{u.quotaUsed}</td>
               <td>{u.quotaRemaining}</td>
               <td>{u.percentUsed}%</td>
+              <td>{u.totalDomain}</td>
               <td>{u.checkedToday}</td>
               <td>{u.okToday}</td>
               <td>
