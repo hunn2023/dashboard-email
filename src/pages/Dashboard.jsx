@@ -5,7 +5,8 @@ import AlertsPanel from '../components/AlertsPanel'
 import SystemQuotaDoughnutChart from "../components/SystemQuotaDoughnutChart";
 import TodayKeyStatusChart from "../components/TodayKeyStatusChart";
 import KeyUsageTrendChart from "../components/KeyUsageTrendChart";
-
+import EmployeeUsageChart from "../components/EmployeeUsageChart";
+import KPI from "../components/KPI";
 import {Spinner}  from '../components/Spinner' ;
 
 export default function Dashboard() {
@@ -47,7 +48,7 @@ export default function Dashboard() {
 
   return (
     <div className="p-6 space-y-6">
-      <h1 className="text-2xl font-bold">Dashboard thống kê</h1>
+       <h2 className="text-base font-semibold text-gray-700 mb-3 text-center"> Tổng hợp dữ liệu tháng hiện tại</h2>
 
       <div className="grid grid-cols-4 gap-4">
        <SummaryCard title="TỔNG SỐ KEY" value={summary.total.toLocaleString()} icon="🗝️" />
@@ -60,9 +61,11 @@ export default function Dashboard() {
         <SystemQuotaDoughnutChart />
         <TodayKeyStatusChart />
       </div>
-         <UserTable />
+      <UserTable />
+      <EmployeeUsageChart />
       <KeyUsageTrendChart />
-   
+      <KPI />
+ 
     </div>
   )
 }
