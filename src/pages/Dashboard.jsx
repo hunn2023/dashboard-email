@@ -52,7 +52,7 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-4 gap-4">
        <SummaryCard title="TỔNG SỐ KEY" value={summary.total.toLocaleString()} icon="🗝️" />
-        <SummaryCard title="KEY CHƯA DÙNG" value={summary.used.toLocaleString()} icon="⚠️" />
+        <SummaryCard title="KEY ĐÃ DÙNG" value={summary.used.toLocaleString()} icon="⚠️" />
         <SummaryCard title="Key CÒN LẠI" value={summary.remaining.toLocaleString()} icon="✅" />
         <AlertsPanel />
       </div>
